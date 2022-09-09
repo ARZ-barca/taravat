@@ -8,41 +8,51 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 :root {
-  --dark: #787f76;
-  --brown: #9aa68b;
-  --gray: #d7d9d8;
-  --pink: #d3b0ab;
-  --light: #ebeaea;
-  --font-color: rgb(62, 75, 75);
+  --header-font-color: rgb(203, 213, 225);
+  --main-bg: rgb(226, 232, 240);
+  --main-font-color: rgb(30, 41, 59);
 }
 
 body {
-  background-color: var(--light);
-  color: var(--font-color);
+  background-color: var(--main-bg);
+  color: var(--main-font-color);
+}
+
+::selection {
+  background-color: rgb(234, 212, 101);
+  color: rgb(73, 100, 120);
+}
+
+.page {
+  padding-bottom: 50px;
 }
 
 /******
     header
 *******/
 .header {
-  padding: 30px;
-  background-color: var(--dark);
-  color: var(--light);
+  padding: 20px 30px 20px 80px;
+  background: #3d7eaa; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #dcce97,
+    #3d7eaa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #dcce97,
+    #3d7eaa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: var(--header-font-color);
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  font-weight: 100;
-  text-align: right;
-  margin-bottom: 25px;
-}
-
-.header h2 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 100;
   text-align: right;
   margin-bottom: 25px;
@@ -53,38 +63,142 @@ body {
   display: flex;
   flex-direction: row-reverse;
   gap: 25px;
+  font-size: 1rem;
 }
 
-.header nav li.selected {
+.header nav li {
+  cursor: pointer;
+}
+
+.header nav li.active {
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--light);
+  border-bottom: 2px solid var(--header-font-color);
+}
+
+/* numbers and address */
+
+.number,
+.address {
+  text-align: right;
+  padding: 10px 20px;
+  display: none;
+  color: #1e293b;
+}
+.number img {
+  filter: invert(11%) sepia(8%) saturate(3699%) hue-rotate(179deg)
+    brightness(91%) contrast(87%);
+}
+.number.active {
+  background-color: rgb(187, 247, 208);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.address.active {
+  display: block;
+  background-color: rgb(191, 219, 254);
+}
+
+.number .phone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /******
     main
 *******/
+main {
+  padding: 10px;
+}
 
 .main-container {
+  width: min(500px, calc(100vw - 20px));
+  height: 500px;
+  background-color: rgb(0, 0, 0);
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgb(121, 159, 182);
+}
+
+.section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main {
-  width: calc(100vw - 20px);
-  border-radius: 5px;
-  height: 200px;
-  margin: 30px 10px;
-  background-color: var(--gray);
-  padding: 10px;
+.main-container,
+.section {
+  border-radius: 10px;
 }
 
-.main .main-headings {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.section.active {
+  opacity: 1;
 }
 
-.main p {
-  text-align: right;
+/* back and next buttons */
+.change {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+.back {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.change.active {
+  display: block;
+}
+
+/* selection bottom of section */
+.selection {
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  list-style: none;
+  gap: 10px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.selection li {
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--main-font-color);
+}
+
+.selection li.active {
+  background-color: var(--main-font-color);
+}
+
+.main-container img {
+  filter: invert(11%) sepia(8%) saturate(3699%) hue-rotate(179deg)
+    brightness(91%) contrast(87%);
 }
