@@ -135,7 +135,13 @@ main {
   transition: opacity 300ms ease-in-out;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.section p {
+  position: relative;
+  top: 15px;
+  text-align: center;
 }
 
 .main-container,
@@ -145,6 +151,23 @@ main {
 
 .section.active {
   opacity: 1;
+  z-index: 1;
+}
+
+/* background for sections */
+.section.laser {
+  background-image: url("./assets/laser-hair-removal-small.jpg");
+  background-size: 100% 100%;
+}
+
+.section.botox {
+  background-image: url("./assets/botox-small.jpg");
+  background-size: 100% 100%;
+}
+
+.section.facial {
+  background-image: url("./assets/facial-1.jpg");
+  background-size: 100% 100%;
 }
 
 /* back and next buttons */
@@ -152,6 +175,7 @@ main {
   width: 30px;
   height: 30px;
   display: none;
+  z-index: 2;
 }
 
 .back {
@@ -159,7 +183,6 @@ main {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
 }
 
 .next {
@@ -167,7 +190,6 @@ main {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
 }
 
 .change.active {
@@ -178,7 +200,7 @@ main {
 .selection {
   position: absolute;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   list-style: none;
   gap: 10px;
   bottom: 10px;
@@ -201,4 +223,11 @@ main {
 .main-container img {
   filter: invert(11%) sepia(8%) saturate(3699%) hue-rotate(179deg)
     brightness(91%) contrast(87%);
+}
+
+@media only screen and (min-width: 700px) {
+  main {
+    background-image: url("./assets/taravat-bg.png");
+    background-size: 100% 100%;
+  }
 }
