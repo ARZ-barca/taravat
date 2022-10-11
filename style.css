@@ -29,6 +29,9 @@ body {
 
 .page {
   padding-bottom: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /******
@@ -112,6 +115,7 @@ body {
 *******/
 main {
   padding: 10px;
+  flex: 1;
 }
 
 .main-container {
