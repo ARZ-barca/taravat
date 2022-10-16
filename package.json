@@ -2,22 +2,25 @@
   "name": "taravat",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "private": true,
   "scripts": {
-    "test": "jest --watch",
-    "babel": "babel main.js --watch -o script.js --source-maps inline"
+    "test": "jest",
+    "build": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.0",
-    "@babel/preset-env": "^7.19.0",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "jest": "^29.0.2"
+    "jest": "^29.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   },
   "browserslist": "> 0.25%, not dead"
 }

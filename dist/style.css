@@ -1,0 +1,32 @@
+/******
+    setup
+*******/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+:root {
+  /* --header-font-color: rgb(203, 213, 225);
+  --main-bg: rgb(226, 232, 240);
+  --main-font-color: rgb(30, 41, 59); */
+}
+
+/******
+    header
+*******/
+header {
+}
+
+header .logo {
+  background-image: url("./assets/taravat-logo.png");
+  background-size: 100% 100%;
+  width: 100px;
+  height: 100px;
+  border: 0.5px solid black;
+}
