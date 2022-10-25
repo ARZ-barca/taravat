@@ -1,0 +1,199 @@
+/******
+    setup
+*******/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+:root {
+  --main-color: rgb(240, 253, 250);
+  --secondary-color: rgb(204, 251, 241);
+  --header-bg: #134e4a;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/******
+    layout
+*******/
+
+.container {
+  width: min(600px, 100vw);
+  margin: auto;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+header .logo,
+footer .logo {
+  width: 50px;
+  height: 50px;
+}
+
+main .hero {
+  height: 500px;
+  margin: auto;
+  position: relative;
+}
+
+.hero-title {
+  width: 150px;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.intro {
+  padding: 30px 10px;
+}
+
+.intro .heading,
+.services .heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  text-align: center;
+}
+
+.intro {
+  padding: 30px 10px;
+}
+
+.services {
+  padding: 30px 0;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service {
+  width: 250px;
+  height: 300px;
+  border: 1px solid rgb(179, 165, 165);
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+footer .container div {
+  flex: 1;
+}
+
+footer .container div.logo {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+/******
+    backgrounds and fonts
+*******/
+
+.page {
+  background-color: var(--main-color);
+  color: #111827;
+}
+
+header > div {
+  background-color: var(--header-bg);
+}
+
+header .shoar {
+  color: var(--main-color);
+  font-weight: 300;
+}
+
+.logo {
+  background-image: url("./assets/taravat.png");
+  background-size: 100% 100%;
+}
+
+main .hero {
+  background-image: url("./assets/background.png");
+  background-size: 100% 100%;
+}
+
+.hero-title {
+  font-size: 1.6rem;
+  font-weight: 300;
+  background-color: rgba(240, 248, 255, 0.473);
+}
+
+.intro-background {
+  background-color: var(--secondary-color);
+}
+
+.intro .heading,
+.services .heading {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.intro p {
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+footer {
+  background-color: var(--header-bg);
+  text-align: right;
+  color: var(--main-color);
+  line-height: 1.5;
+}
+
+footer .heading {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 0.5px solid var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+footer address {
+  font-style: normal;
+}
+
+footer a {
+  color: inherit;
+  display: block;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+footer .hours p {
+  margin-top: 5px;
+}
